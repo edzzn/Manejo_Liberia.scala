@@ -4,11 +4,15 @@ package lib
   * Created by edzzn on 6/29/17.
   */
 
+
+import java.io.FileOutputStream
+import java.io.ObjectOutputStream
+
 /**
   * El Objeto util va a tener funciones necesarias en la aplicación
   *
   */
-/
+
 object Util {
 
   def validaCedula(cedulaString :String): Boolean ={
@@ -42,6 +46,9 @@ object Util {
     else
       return false
   }
+
+  // Metodos para la serialización
+
 
 
 }

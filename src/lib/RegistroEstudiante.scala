@@ -9,7 +9,7 @@ class RegistroEstudiante(){
 
   def mostrar(): Unit ={
     for (estudiante <- reg){
-      println(estudiante.toString())
+      println(estudiante)
     }
   }
 

@@ -7,9 +7,9 @@ class Estudiante(val cedula : String, var nombre : String, var apellido : String
 
   override def toString : String = s"$cedula $nombre $apellido"
 
-  def edit(nombreStr : String, apellidoStr : String): Unit ={
-    nombre = nombreStr
-    apellido = apellidoStr
+  def edit(nombreN : String, apellidoN : String): Unit ={
+    nombre = nombreN
+    apellido = apellidoN
   }
 
 }

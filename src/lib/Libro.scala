@@ -7,11 +7,11 @@ class Libro(val isbn : String, var nombre : String,  var autor : String, var cat
 
   override def toString: String = s"$isbn $categoria $nombre $autor $numPag $idioma"
 
-  def edit(nombreStr : String, autorStr : String, categoriaCat : Categoria, numPagInt : Int, idiomaStr : String): Unit ={
-    nombre = nombreStr
-    autor = autorStr
-    categoria = categoriaCat
-    numPag = numPagInt
-    idioma = idiomaStr
+  def edit(nombreN : String, autorN : String, categoriaN : Categoria, numPagN : Int, idiomaN : String): Unit ={
+    nombre = nombreN
+    autor = autorN
+    categoria = categoriaN
+    numPag = numPagN
+    idioma = idiomaN
   }
 }

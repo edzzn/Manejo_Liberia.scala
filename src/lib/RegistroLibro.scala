@@ -9,7 +9,7 @@ class RegistroLibro(){
 
   def mostrar(): Unit ={
     for (libro <- reg){
-      println(libro.toString())
+      println(libro)
     }
   }
 

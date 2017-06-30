@@ -7,11 +7,12 @@ object Main {
   def main(args: Array[String]): Unit = {
 
     val cat = new Categoria("SH", "decript")
-    println(cat.mostrarCategoria())
+    println(cat.toString())
     println(cat.codigo)
 
     cat.edit("NUew dews")
-    println(cat.mostrarCategoria())
+    println(cat.toString())
+    println(cat)
 
 
 
