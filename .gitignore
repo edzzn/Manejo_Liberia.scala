@@ -10,3 +10,6 @@
 /data_categorias.dat
 /a.tmp
 /data_reservas.dat
+/data_perstamos.dat
+/data_libros.dat
+/src/lib/test.scala

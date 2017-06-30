@@ -12,7 +12,6 @@ class RegistroReserva(obj : Any) extends Serializable{
 
   override def toString: String = reg.mkString(" \n")
 
-
   def add(reserva: Reserva) : Unit ={
     reg += reserva
   }
