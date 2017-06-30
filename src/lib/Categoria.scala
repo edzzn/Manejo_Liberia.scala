@@ -8,7 +8,6 @@ class Categoria(val codigo : String, var descripcion : String){
     descripcion = descripcionStr
   }
 
-  def mostrarCategoria(): String ={
-    return (s"$codigo $descripcion")
-  }
+  override def toString : String = s"$codigo $descripcion"
+
 }

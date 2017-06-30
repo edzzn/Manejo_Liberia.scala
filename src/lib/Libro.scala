@@ -5,9 +5,7 @@ package lib
   */
 class Libro(val isbn : String, var nombre : String,  var autor : String, var categoria : Categoria, var numPag : Int, var idioma : String){
 
-  def mostrarLibro(): String ={
-    return (s"$isbn $categoria $nombre $autor $numPag $idioma")
-  }
+  override def toString: String = s"$isbn $categoria $nombre $autor $numPag $idioma"
 
   def edit(nombreStr : String, autorStr : String, categoriaCat : Categoria, numPagInt : Int, idiomaStr : String): Unit ={
     nombre = nombreStr
