@@ -18,13 +18,14 @@ object Main {
     reg_est.add(est2)
     reg_est.add(est3)
     reg_est.add(est4)
-    reg_est.mostrar()
+    println(reg_est)
     println("Serializamos")
     Util.saveD("e", reg_est)
 
     var n_reg_est = new RegistroEstudiante(Util.loadD("e"))
 
-    n_reg_est.mostrar()
+    println(reg_est)
+
 
 //
 //    // SERIALIZACION

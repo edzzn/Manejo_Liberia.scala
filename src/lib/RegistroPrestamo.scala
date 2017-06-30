@@ -9,12 +9,8 @@ class RegistroPrestamo(obj : Any) extends Serializable{
   if (obj.getClass == this.getClass){
     this.reg = obj.asInstanceOf[RegistroPrestamo].reg
   }
-  
-  def mostrar(): Unit ={
-    for (prestamo <- reg){
-      println(prestamo)
-    }
-  }
+
+  override def toString: String = reg.mkString(" \n")
 
   def add(prestamo: Prestamo) : Unit ={
     reg += prestamo

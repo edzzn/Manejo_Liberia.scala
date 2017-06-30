@@ -3,17 +3,15 @@ package lib
 /**
   * Created by edzzn on 6/29/17.
   */
-class RegistroReserva(obj : Any) {
+class RegistroReserva(obj : Any) extends Serializable{
   private var reg = scala.collection.mutable.ListBuffer.empty[Reserva]
   // Permite la deserealizacion
   if (obj.getClass == this.getClass){
     this.reg = obj.asInstanceOf[RegistroReserva].reg
   }
-  def mostrar(): Unit ={
-    for (reserva <- reg){
-      println(reserva)
-    }
-  }
+
+  override def toString: String = reg.mkString(" \n")
+
 
   def add(reserva: Reserva) : Unit ={
     reg += reserva

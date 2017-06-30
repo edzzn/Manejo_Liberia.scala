@@ -4,3 +4,9 @@
 # IntelliJ project files
 /.idea/workspace.xml
 /out
+/test.scala
+/data.dat
+/data_estudiantes.dat
+/data_categorias.dat
+/a.tmp
+/data_reservas.dat

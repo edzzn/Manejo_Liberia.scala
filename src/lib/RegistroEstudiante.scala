@@ -11,11 +11,7 @@ class RegistroEstudiante(obj : Any) extends Serializable{
     this.reg = obj.asInstanceOf[RegistroEstudiante].reg
   }
 
-  def mostrar(): Unit ={
-    for (estudiante <- reg){
-      println(estudiante)
-    }
-  }
+  override def toString: String = reg.mkString(" \n")
 
   def add(estudiante: Estudiante) : Unit ={
     reg += estudiante

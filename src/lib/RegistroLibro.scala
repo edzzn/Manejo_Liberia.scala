@@ -11,11 +11,7 @@ class RegistroLibro(obj : Any) extends Serializable{
     this.reg = obj.asInstanceOf[RegistroLibro].reg
   }
 
-  def mostrar(): Unit ={
-    for (libro <- reg){
-      println(libro)
-    }
-  }
+  override def toString: String = reg.mkString(" \n")
 
   def add(libro: Libro) : Unit ={
     reg += libro

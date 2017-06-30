@@ -12,15 +12,10 @@ class RegistroCategoria(obj : Any) extends Serializable{
     this.reg = obj.asInstanceOf[RegistroCategoria].reg
   }
 
-  def mostrar(): Unit ={
-    for (categoria <- reg){
-      println(categoria)
-    }
-  }
+  override def toString: String = reg.mkString(" \n")
 
   def add(categoria: Categoria) : Unit ={
     reg += categoria
-    return true
   }
 
   def editcategoria(codigo : String, nombre : String, descripcion : String): Unit ={
