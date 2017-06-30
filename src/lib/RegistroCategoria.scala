@@ -4,8 +4,13 @@ package lib
   * Created by edzzn on 6/29/17.
   */
 
-class RegistroCategoria(){
-  private var reg = scala.collection.mutable.ListBuffer.empty[Categoria]
+class RegistroCategoria(obj : Any) extends Serializable{
+
+  var reg = scala.collection.mutable.ListBuffer.empty[Categoria]
+  // Permite la deserealizacion
+  if (obj.getClass == this.getClass){
+    this.reg = obj.asInstanceOf[RegistroCategoria].reg
+  }
 
   def mostrar(): Unit ={
     for (categoria <- reg){
@@ -15,6 +20,7 @@ class RegistroCategoria(){
 
   def add(categoria: Categoria) : Unit ={
     reg += categoria
+    return true
   }
 
   def editcategoria(codigo : String, nombre : String, descripcion : String): Unit ={

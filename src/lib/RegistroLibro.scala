@@ -4,8 +4,12 @@ package lib
   * Created by edzzn on 6/29/17.
   */
 
-class RegistroLibro(){
-  private var reg = scala.collection.mutable.ListBuffer.empty[Libro]
+class RegistroLibro(obj : Any) extends Serializable{
+  var reg = scala.collection.mutable.ListBuffer.empty[Libro]
+  // Permite la deserealizacion
+  if (obj.getClass == this.getClass){
+    this.reg = obj.asInstanceOf[RegistroLibro].reg
+  }
 
   def mostrar(): Unit ={
     for (libro <- reg){

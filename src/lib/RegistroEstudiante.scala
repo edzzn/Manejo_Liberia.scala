@@ -4,8 +4,12 @@ package lib
   * Created by edzzn on 6/29/17.
   */
 
-class RegistroEstudiante(){
-  private var reg = scala.collection.mutable.ListBuffer.empty[Estudiante]
+class RegistroEstudiante(obj : Any) extends Serializable{
+  var reg = scala.collection.mutable.ListBuffer.empty[Estudiante]
+
+  if (obj.getClass == this.getClass){
+    this.reg = obj.asInstanceOf[RegistroEstudiante].reg
+  }
 
   def mostrar(): Unit ={
     for (estudiante <- reg){

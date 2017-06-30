@@ -3,9 +3,13 @@ package lib
 /**
   * Created by edzzn on 6/29/17.
   */
-class RegistroPrestamo {
-  private var reg = scala.collection.mutable.ListBuffer.empty[Prestamo]
-
+class RegistroPrestamo(obj : Any) extends Serializable{
+  var reg = scala.collection.mutable.ListBuffer.empty[Prestamo]
+  // Permite la deserealizacion
+  if (obj.getClass == this.getClass){
+    this.reg = obj.asInstanceOf[RegistroPrestamo].reg
+  }
+  
   def mostrar(): Unit ={
     for (prestamo <- reg){
       println(prestamo)

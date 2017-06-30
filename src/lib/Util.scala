@@ -7,11 +7,14 @@ package lib
 
 import java.io.FileOutputStream
 import java.io.ObjectOutputStream
+import java.io.FileInputStream
+import java.io.ObjectInputStream
 
 /**
   * El Objeto util va a tener funciones necesarias en la aplicación
   *
   */
+
 
 object Util {
 
@@ -49,6 +52,49 @@ object Util {
 
   // Metodos para la serialización
 
+  def saveD(tipo :String, objeto : Any): Unit ={
+    val fileName = getFileName(tipo)
+    val fos = new FileOutputStream(fileName)
+    val oss = new ObjectOutputStream(fos)
 
+    oss.writeObject(objeto)
+    oss.close()
+  }
+  def loadD(tipo :String): Any ={
+    val fileName = getFileName(tipo)
+    val fis = new FileInputStream(fileName)
+    val ois = new ClassLoader(fis)
+    val data = ois.readObject
+    ois.close
+
+    return data
+  }
+
+  def getFileName(tipo: String): String ={
+//     l -> libros
+//     p -> prestamos
+//     r -> reservas
+//     e -> estudiantes
+//     c -> categorias
+
+    tipo match {
+      case "l" => return "data_libros.dat"
+      case "p" => return "data_perstamos.dat"
+      case "r" => return "data_reservas.dat"
+      case "e" => return "data_estudiantes.dat"
+      case "c" => return "data_categorias.dat"
+      case _   => return "None"
+    }
+    return "B"
+
+  }
+
+
+  class ClassLoader(fileInputStream: FileInputStream) extends ObjectInputStream(fileInputStream) {
+    override def resolveClass(desc: java.io.ObjectStreamClass): Class[_] = {
+      try { Class.forName(desc.getName, false, getClass.getClassLoader) }
+      catch { case ex: ClassNotFoundException => super.resolveClass(desc) }
+    }
+  }
 
 }
