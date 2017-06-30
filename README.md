@@ -1,2 +1,3 @@
-# Manejo_Liberia_SC
-A scala aplication
+# Manejo_Liberia.scala
+
+Manejo de una liberia.
