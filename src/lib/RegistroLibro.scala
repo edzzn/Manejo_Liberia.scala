@@ -17,14 +17,14 @@ class RegistroLibro(obj : Any) extends Serializable{
     reg += libro
   }
 
-  def editLibro(isbn: String, nombre : String, autor : String, categoria : Categoria, numPag : Int, idioma : String): Unit ={
+  def editLibro(isbn: String, nombre : String, autor : String, categoria : Categoria, numPag : Int, editorial: String, idioma : String): Unit ={
     var libro = getLibro(isbn)
-    libro.edit(nombre, autor, categoria, numPag, idioma)
+    libro.edit(nombre, autor, categoria, numPag, editorial, idioma)
   }
 
-  def deleteEstudiante(cedula : String): Unit ={
-    val estudiante = getLibro(cedula)
-    reg -= estudiante
+  def deleteLibro(isbn : String): Unit ={
+    val libro = getLibro(isbn)
+    reg -= libro
   }
 
   def getLibro(isbn : String): Libro ={

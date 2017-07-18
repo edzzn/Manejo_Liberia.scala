@@ -155,23 +155,28 @@ public class Manejo extends JDialog {
     }
 
     private void onEstudianteElimiar() {
-        JDialog getId = new EstudianteIdEliminar();
-        WindowUtil.open(getId);
+        JDialog getIdEliminar = new EstudianteIdEliminar();
+        WindowUtil.open(getIdEliminar);
         System.out.println("on btnEstudianteEliminar");
     }
 
     private void onLibrosCrear() {
-
+        JDialog crearLibro = new LibroCrear();
+        WindowUtil.open(crearLibro);
         System.out.println("onLibrosCrear");
     }
 
     private void onLibrosEditar() {
         // add your code here
+        JDialog editarLibro = new LibroIsbnModificar();
+        WindowUtil.open(editarLibro);
         System.out.println("onLibrosEditar");
     }
 
     private void onLibrosEliminar() {
         // add your code here
+        JDialog eliminarLibro = new LibroIsbnEliminar();
+        WindowUtil.open(eliminarLibro);
         System.out.println("on onLibrosEliminar");
     }
 

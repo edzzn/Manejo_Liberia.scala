@@ -21,7 +21,7 @@ object Data {
     }
     i = 0
     for(i <- 0 to 9 ) {
-      reg_l.add(new Libro("Isb00"+ i, "Nombre"+i, "Author"+i, reg_c.reg(i), i+300, "es"))
+      reg_l.add(new Libro("Isb00"+ i, "Nombre"+i, "Author"+i, reg_c.reg(i), i+300, "edit" + i, "es"))
     }
 
     i = 0

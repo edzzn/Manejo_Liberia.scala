@@ -1,15 +1,19 @@
 package gui;
 
+import lib.Libro;
+import lib.RegistroLibro;
+import lib.Util;
+
 import javax.swing.*;
 import java.awt.event.*;
 
-public class LibroISBN extends JDialog {
+public class LibroIsbnEliminar extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField textField1;
+    private JTextField txtIsbn;
 
-    public LibroISBN() {
+    public LibroIsbnEliminar() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -43,8 +47,20 @@ public class LibroISBN extends JDialog {
     }
 
     private void onOK() {
-        // add your code here
-        dispose();
+        // Aqui buscamos y validamos al libro
+        RegistroLibro reg_lib = new RegistroLibro(Util.loadD("l"));
+        String isbn = txtIsbn.getText();
+        Libro libro = reg_lib.getLibro(isbn);
+        System.out.println(reg_lib);
+        if (libro != null){
+            reg_lib.deleteLibro(isbn);
+            Util.saveD("l",reg_lib);
+            WindowUtil.mjsAlerta("Libro " + isbn+  " <b>Eliminado</b>");
+            dispose();
+
+        } else{
+            WindowUtil.mjsAlerta("ISBD no registrado");
+        }
     }
 
     private void onCancel() {
@@ -53,7 +69,7 @@ public class LibroISBN extends JDialog {
     }
 
     public static void main(String[] args) {
-        LibroISBN dialog = new LibroISBN();
+        LibroIsbnEliminar dialog = new LibroIsbnEliminar();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

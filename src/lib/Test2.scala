@@ -22,13 +22,16 @@ object Main {
     println("Serializamos")
     Util.saveD("e", reg_est)
 
+    var n_reg_lib = new RegistroLibro((Util.loadD("l")))
+
+    println(n_reg_lib)
+
+    println("")
     var n_reg_cat = new RegistroCategoria((Util.loadD("c")))
 
     println(n_reg_cat)
 
-
-
-  //
+      //
   //    // SERIALIZACION
   //    var cat1 = new Categoria("14001", "Nombre")
   //    var cat2 = new Categoria("14002", "Nombre")

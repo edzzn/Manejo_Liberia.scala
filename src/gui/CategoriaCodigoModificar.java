@@ -50,9 +50,10 @@ public class CategoriaCodigoModificar extends JDialog {
         // Aqui buscamos y validamos la Categoria
         RegistroCategoria reg_cat = new RegistroCategoria(Util.loadD("c"));
         String codigo = txtCodigo.getText();
-        Categoria estudiante = reg_cat.getCategoria(codigo);
+        Categoria categoria = reg_cat.getCategoria(codigo);
+        System.out.println("Categoria " + categoria);
         System.out.println(reg_cat);
-        if (estudiante != null){
+        if (categoria != null){
             JDialog categoriaEditar = new CategoriaModificar(codigo);
 
             WindowUtil.open(categoriaEditar);
