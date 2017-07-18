@@ -113,6 +113,8 @@ public class Manejo extends JDialog {
 
     private void onReservaCrear() {
         // add your code here
+        JDialog crearReserva = new ReservaCrear();
+        WindowUtil.open(crearReserva);
         System.out.println("on onReservaCrear");
     }
 

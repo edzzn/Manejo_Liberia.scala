@@ -25,9 +25,14 @@ object Main {
     var n_reg_lib = new RegistroLibro((Util.loadD("l")))
 
     println(n_reg_lib)
-
     println("")
-    var n_reg_cat = new RegistroCategoria((Util.loadD("c")))
+
+    var n_reg_est = new RegistroEstudiante(Util.loadD("e"))
+
+    println(n_reg_est)
+    println("")
+
+    var n_reg_cat = new RegistroReserva(Util.loadD("r"))
 
     println(n_reg_cat)
 

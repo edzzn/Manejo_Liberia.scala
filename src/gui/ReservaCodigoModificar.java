@@ -3,18 +3,13 @@ package gui;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class Reserva extends JDialog {
+public class ReservaCodigoModificar extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
     private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
-    private JTextField textField6;
 
-    public Reserva() {
+    public ReservaCodigoModificar() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -58,7 +53,7 @@ public class Reserva extends JDialog {
     }
 
     public static void main(String[] args) {
-        Reserva dialog = new Reserva();
+        ReservaCodigoModificar dialog = new ReservaCodigoModificar();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

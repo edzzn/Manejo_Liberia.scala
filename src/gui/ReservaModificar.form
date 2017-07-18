@@ -116,7 +116,10 @@
                 <preferred-size width="250" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <editable value="false"/>
+              <enabled value="true"/>
+            </properties>
           </component>
           <component id="1be8e" class="javax.swing.JTextField" binding="textField2" default-binding="true">
             <constraints>

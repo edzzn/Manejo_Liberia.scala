@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="gui.Reserva">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="gui.ReservaCrear">
   <grid id="cbd77" binding="contentPane" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="20" bottom="20" right="20"/>
     <constraints>
@@ -110,7 +110,7 @@
               <text value="Hora de la reserva"/>
             </properties>
           </component>
-          <component id="13fe4" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+          <component id="13fe4" class="javax.swing.JTextField" binding="txtCodigo" default-binding="true">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="250" height="-1"/>
@@ -118,7 +118,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="1a268" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+          <component id="1a268" class="javax.swing.JTextField" binding="txtIdEstudiante" default-binding="true">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -126,7 +126,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="8e6ef" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+          <component id="8e6ef" class="javax.swing.JTextField" binding="txtIsbn" default-binding="true">
             <constraints>
               <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -134,7 +134,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="f8804" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+          <component id="f8804" class="javax.swing.JTextField" binding="txtFechaAR" default-binding="true">
             <constraints>
               <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -142,7 +142,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="e6c55" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+          <component id="e6c55" class="javax.swing.JTextField" binding="txtFechDR" default-binding="true">
             <constraints>
               <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -150,7 +150,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="add04" class="javax.swing.JTextField" binding="textField6" default-binding="true">
+          <component id="add04" class="javax.swing.JTextField" binding="txtHoraReserva" default-binding="true">
             <constraints>
               <grid row="10" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>

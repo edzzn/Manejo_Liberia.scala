@@ -16,7 +16,7 @@ class RegistroReserva(obj : Any) extends Serializable{
     reg += reserva
   }
 
-  def editReserva(id: String, estudiante : Estudiante, libro : Libro, fechaAReservar : Int, fechaReserva : Int, horaReserva : Int): Unit ={
+  def editReserva(id: String, estudiante : Estudiante, libro : Libro, fechaAReservar : String, fechaReserva : String, horaReserva : String): Unit ={
     var reserva = getReserva(id)
     reserva.edit(estudiante, libro, fechaAReservar, fechaReserva, horaReserva)
   }

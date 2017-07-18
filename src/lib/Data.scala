@@ -26,14 +26,14 @@ object Data {
 
     i = 0
     for(i <- 0 to 9){
-      reg_r.add(new Reserva(i.toString, reg_e.reg(i), reg_l.reg(i), i*20, i*25, i*40))
-      reg_p.add(new Prestamo(i.toString, reg_e.reg(i), reg_l.reg(i), i*20, i*25, i*40))
+      reg_r.add(new Reserva(i.toString, reg_e.reg(i), reg_l.reg(i), ""+i*20, ""+i*25, ""+i*40))
+      reg_p.add(new Prestamo(i.toString, reg_e.reg(i), reg_l.reg(i), ""+i*20, ""+i*25, ""+i*40))
     }
 
     Util.saveD("l", reg_l)
     Util.saveD("c", reg_c)
     Util.saveD("e", reg_e)
-    Util.saveD("e", reg_r)
+    Util.saveD("r", reg_r)
     Util.saveD("p", reg_p)
 
   }
