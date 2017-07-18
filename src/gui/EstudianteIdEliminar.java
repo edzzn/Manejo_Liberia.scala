@@ -7,20 +7,20 @@ import lib.Util;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class EstudianteId extends JDialog {
+public class EstudianteIdEliminar extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
     private JTextField txtIdEstudiante;
 
-    public EstudianteId() {
+    public EstudianteIdEliminar() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onOK();
+                onEliminar();
             }
         });
 
@@ -46,16 +46,16 @@ public class EstudianteId extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
-    private void onOK() {
+    private void onEliminar() {
         // Aqui buscamos y validamos al estudiante
         RegistroEstudiante reg_est = new RegistroEstudiante(Util.loadD("e"));
         String cedula = txtIdEstudiante.getText();
         Estudiante estudiante = reg_est.getEstudiante(cedula);
         System.out.println(reg_est);
         if (estudiante != null){
-            JDialog estudianteEditar = new EstudianteModificar(cedula);
-
-            WindowUtil.open(estudianteEditar);
+            reg_est.deleteEstudiante(cedula);
+            Util.saveD("e",reg_est);
+            WindowUtil.mjsAlerta("Estudiante " + cedula +  " <b>Eliminado</b>");
             dispose();
 
 
@@ -70,7 +70,7 @@ public class EstudianteId extends JDialog {
     }
 
     public static void main(String[] args) {
-        EstudianteId dialog = new EstudianteId();
+        EstudianteIdEliminar dialog = new EstudianteIdEliminar();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
