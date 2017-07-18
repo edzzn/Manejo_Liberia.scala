@@ -22,44 +22,45 @@ object Main {
     println("Serializamos")
     Util.saveD("e", reg_est)
 
-    var n_reg_est = new RegistroEstudiante(Util.loadD("e"))
+    var n_reg_cat = new RegistroCategoria((Util.loadD("c")))
 
-    println(reg_est)
-
-
-//
-//    // SERIALIZACION
-//    var cat1 = new Categoria("14001", "Nombre")
-//    var cat2 = new Categoria("14002", "Nombre")
-//    var cat3 = new Categoria("14003", "Nombre")
-//
-//    var reg_cat = new RegistroCategoria()
-//    reg_cat.add(cat1)
-//    reg_cat.add(cat2)
-//    reg_cat.add(cat3)
-//
-//    reg_cat.mostrar()
-//    println("")
-//
-////    Util.serialize("data.dat", reg_cat)
-//    Util.saveD("c", reg_cat)
-//
-//    val nuevo_Rcat = new RegistroCategoria(Util.loadD("c"))
-////    val nuevo_Rcat = new RegistroCategoria(Util.deserialize("data.dat"))
-//
-//    println("Deserealiazo")
-//    nuevo_Rcat.mostrar()
+    println(n_reg_cat)
 
 
 
-//    val cat = new Categoria("SH", "decript")
-//    println(cat.toString())
-//    println(cat.codigo)
-//
-//    cat.edit("NUew dews")
-//    println(cat.toString())
-//    println(cat)
-//
+  //
+  //    // SERIALIZACION
+  //    var cat1 = new Categoria("14001", "Nombre")
+  //    var cat2 = new Categoria("14002", "Nombre")
+  //    var cat3 = new Categoria("14003", "Nombre")
+  //
+  //    var reg_cat = new RegistroCategoria()
+  //    reg_cat.add(cat1)
+  //    reg_cat.add(cat2)
+  //    reg_cat.add(cat3)
+  //
+  //    reg_cat.mostrar()
+  //    println("")
+  //
+  ////    Util.serialize("data.dat", reg_cat)
+  //    Util.saveD("c", reg_cat)
+  //
+  //    val nuevo_Rcat = new RegistroCategoria(Util.loadD("c"))
+  ////    val nuevo_Rcat = new RegistroCategoria(Util.deserialize("data.dat"))
+  //
+  //    println("Deserealiazo")
+  //    nuevo_Rcat.mostrar()
+
+
+
+  //    val cat = new Categoria("SH", "decript")
+  //    println(cat.toString())
+  //    println(cat.codigo)
+  //
+  //    cat.edit("NUew dews")
+  //    println(cat.toString())
+  //    println(cat)
+  //
 
 
     //    val libro = new Libro("002", "4HWW" , "Tim", new Categoria("SH", "SelfH"), 450, "es")

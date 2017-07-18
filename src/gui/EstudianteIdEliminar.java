@@ -51,7 +51,6 @@ public class EstudianteIdEliminar extends JDialog {
         RegistroEstudiante reg_est = new RegistroEstudiante(Util.loadD("e"));
         String cedula = txtIdEstudiante.getText();
         Estudiante estudiante = reg_est.getEstudiante(cedula);
-        System.out.println(reg_est);
         if (estudiante != null){
             reg_est.deleteEstudiante(cedula);
             Util.saveD("e",reg_est);

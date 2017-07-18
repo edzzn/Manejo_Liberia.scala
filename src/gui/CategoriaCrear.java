@@ -1,5 +1,9 @@
 package gui;
 
+import lib.Categoria;
+import lib.RegistroCategoria;
+import lib.Util;
+
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -7,8 +11,9 @@ public class CategoriaCrear extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField textField1;
-    private JTextArea textArea1;
+    private JTextField txtCodigo;
+    private JTextArea txtDescripcion;
+    private JLabel lblDescripcion;
 
     public CategoriaCrear() {
         setContentPane(contentPane);
@@ -44,8 +49,25 @@ public class CategoriaCrear extends JDialog {
     }
 
     private void onOK() {
-        // add your code here
-        dispose();
+        String codigo = txtCodigo.getText();
+        String descripcion = txtDescripcion.getText();
+
+        if(!codigo.isEmpty() && !descripcion.isEmpty()){
+            // validad si duplicado
+            RegistroCategoria reg_cat = new RegistroCategoria(Util.loadD("c"));
+            if(reg_cat.getCategoria(codigo) != null){
+                WindowUtil.mjsAlerta("Error, Categoría ya registrado");
+            } else {
+                // agregamos a los usuarios
+                Categoria nuevaCat = new Categoria(codigo, descripcion);
+                reg_cat.add(nuevaCat);
+                Util.saveD("c", reg_cat);
+                WindowUtil.mjsAlerta("Categoría <b>Registrado</b>");
+                dispose();
+            }
+        } else{
+            WindowUtil.mjsAlerta("Datos invalidos");
+        }
     }
 
     private void onCancel() {

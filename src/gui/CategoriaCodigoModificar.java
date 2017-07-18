@@ -1,15 +1,19 @@
 package gui;
 
+import lib.Categoria;
+import lib.RegistroCategoria;
+import lib.Util;
+
 import javax.swing.*;
 import java.awt.event.*;
 
-public class CategoriaCodigo extends JDialog {
+public class CategoriaCodigoModificar extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField textField1;
+    private JTextField txtCodigo;
 
-    public CategoriaCodigo() {
+    public CategoriaCodigoModificar() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -43,8 +47,21 @@ public class CategoriaCodigo extends JDialog {
     }
 
     private void onOK() {
-        // add your code here
-        dispose();
+        // Aqui buscamos y validamos la Categoria
+        RegistroCategoria reg_cat = new RegistroCategoria(Util.loadD("c"));
+        String codigo = txtCodigo.getText();
+        Categoria estudiante = reg_cat.getCategoria(codigo);
+        System.out.println(reg_cat);
+        if (estudiante != null){
+            JDialog categoriaEditar = new CategoriaModificar(codigo);
+
+            WindowUtil.open(categoriaEditar);
+            dispose();
+
+
+        } else{
+            WindowUtil.mjsAlerta("Id no registrado");
+        }
     }
 
     private void onCancel() {
@@ -53,7 +70,7 @@ public class CategoriaCodigo extends JDialog {
     }
 
     public static void main(String[] args) {
-        CategoriaCodigo dialog = new CategoriaCodigo();
+        CategoriaCodigoModificar dialog = new CategoriaCodigoModificar();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

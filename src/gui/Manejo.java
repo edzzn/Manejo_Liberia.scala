@@ -177,16 +177,20 @@ public class Manejo extends JDialog {
 
     private void onCategoriaCrear() {
         // add your code here
+        JDialog crearCategoria = new CategoriaCrear();
+        WindowUtil.open(crearCategoria);
         System.out.println("on onCategoriaCrear");
     }
 
     private void onCategoriaEditar() {
-        // add your code here
+        JDialog editarCategoria = new CategoriaCodigoModificar();
+        WindowUtil.open(editarCategoria);
         System.out.println("on onCategoriaEditar");
     }
 
     private void onCategoriaEliminar() {
-        // add your code here
+        JDialog eliminarCategoria = new CategoriaCodigoModificar();
+        WindowUtil.open(eliminarCategoria);
         System.out.println("on onCategoriaEliminar");
     }
 

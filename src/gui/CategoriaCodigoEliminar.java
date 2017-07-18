@@ -1,29 +1,22 @@
 package gui;
 
-import lib.Estudiante;
-import lib.RegistroEstudiante;
+import lib.Categoria;
+import lib.RegistroCategoria;
 import lib.Util;
-import scala.reflect.internal.TreeInfo;
 
 import javax.swing.*;
 import java.awt.event.*;
 
-public class EstudianteModificar extends JDialog {
+public class CategoriaCodigoEliminar extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField txtIdEstudiante;
-    private JTextField txtNombres;
-    private JTextField txtApellidos;
-    String cedula;
+    private JTextField txtCodigo;
 
-    public EstudianteModificar(String cedula) {
-        this.cedula = cedula;
+    public CategoriaCodigoEliminar() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
-
-        updateDataDisplay();
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -53,32 +46,21 @@ public class EstudianteModificar extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
-    private void updateDataDisplay(){
-        this.txtIdEstudiante.setText(cedula);
-        txtIdEstudiante.setEditable(false);
-
-        RegistroEstudiante reg_est = new RegistroEstudiante(Util.loadD("e"));
-        Estudiante est = reg_est.getEstudiante(cedula);
-
-        this.txtNombres.setText(est.nombre());
-        this.txtApellidos.setText(est.apellido());
-    }
-
     private void onOK() {
-        String cedula = txtIdEstudiante.getText();
-        String nombres = txtNombres.getText();
-        String apellidos = txtApellidos.getText();
+        // Aqui buscamos y validamos la categoria
+        RegistroCategoria reg_cat = new RegistroCategoria(Util.loadD("c"));
 
-        if(!nombres.isEmpty() && !apellidos.isEmpty()){
-            // agregamos a los usuarios
-            Estudiante nuevoEst = new Estudiante(cedula, nombres, apellidos);
-            RegistroEstudiante reg_est = new RegistroEstudiante(Util.loadD("e"));
-            reg_est.getEstudiante(cedula).edit(nombres, apellidos);
-            Util.saveD("e",reg_est);
-            WindowUtil.mjsAlerta("Estudiante <b>Modificado</b>");
+        String codigo = txtCodigo.getText();
+        Categoria categoria = reg_cat.getCategoria(codigo);
+        if (categoria != null){
+            reg_cat.deleteCategoria(codigo);
+            Util.saveD("c",reg_cat);
+            WindowUtil.mjsAlerta("Categoría " + codigo +  " <b>Eliminada</b>");
             dispose();
+
+
         } else{
-            WindowUtil.mjsAlerta("Datos invalidos");
+            WindowUtil.mjsAlerta("Código no registrado");
         }
     }
 
@@ -88,7 +70,7 @@ public class EstudianteModificar extends JDialog {
     }
 
     public static void main(String[] args) {
-        EstudianteModificar dialog = new EstudianteModificar("id");
+        CategoriaCodigoModificar dialog = new CategoriaCodigoModificar();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

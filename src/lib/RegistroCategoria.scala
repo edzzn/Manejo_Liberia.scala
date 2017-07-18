@@ -19,16 +19,16 @@ class RegistroCategoria(obj : Any) extends Serializable{
   }
 
   def editcategoria(codigo : String, nombre : String, descripcion : String): Unit ={
-    var categoria = getcategoria(codigo)
+    var categoria = getCategoria(codigo)
     categoria.edit(descripcion)
   }
 
-  def deletecategoria(codigo : String): Unit ={
-    val categoria = getcategoria(codigo)
+  def deleteCategoria(codigo : String): Unit ={
+    val categoria = getCategoria(codigo)
     reg -= categoria
   }
 
-  def getcategoria(codigo : String): Categoria ={
+  def getCategoria(codigo : String): Categoria ={
     for (categoria <- reg){
       if (categoria.codigo.equals(codigo)) {
         return categoria

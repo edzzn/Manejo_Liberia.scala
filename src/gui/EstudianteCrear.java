@@ -49,18 +49,18 @@ public class EstudianteCrear extends JDialog {
     }
 
     private void onOK() {
-        String id = txtIdEstudiante.getText();
+        String cedula = txtIdEstudiante.getText();
         String nombres = txtNombres.getText();
         String apellidos = txtApellido.getText();
 
-        if(!id.isEmpty() && !nombres.isEmpty() && !apellidos.isEmpty()){
+        if(!cedula.isEmpty() && !nombres.isEmpty() && !apellidos.isEmpty()){
             // validad si duplicado
             RegistroEstudiante reg_est = new RegistroEstudiante(Util.loadD("e"));
-            if(reg_est.getEstudiante(id) != null){
+            if(reg_est.getEstudiante(cedula) != null){
                 WindowUtil.mjsAlerta("Error, Estudiante ya registrado");
             } else {
                 // agregamos a los usuarios
-                Estudiante nuevoEst = new Estudiante(id, nombres, apellidos);
+                Estudiante nuevoEst = new Estudiante(cedula, nombres, apellidos);
                 reg_est.add(nuevoEst);
                 Util.saveD("e", reg_est);
                 WindowUtil.mjsAlerta("Estudiante <b>Registrado</b>");
