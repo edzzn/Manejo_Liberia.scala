@@ -19,6 +19,8 @@ public class Login extends JDialog {
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
+        this.setLocation(300,200);
+
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onOK();

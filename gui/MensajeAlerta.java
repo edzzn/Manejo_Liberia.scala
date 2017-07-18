@@ -1,7 +1,5 @@
 package gui;
 
-import lib.Window;
-
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -23,6 +21,7 @@ public class MensajeAlerta extends JDialog {
             }
         });
 
+        this.setLocation(300,200);
         this.setInformation(this.mensaje);
     }
 
@@ -33,7 +32,9 @@ public class MensajeAlerta extends JDialog {
 
     public static void main(String[] args) {
         MensajeAlerta dialog = new MensajeAlerta("mensaje");
-        WindowUtil.open(dialog);
+        dialog.pack();
+        dialog.setVisible(true);
+        System.exit(0);
     }
 
     private void setInformation(String mensaje) {

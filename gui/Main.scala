@@ -6,8 +6,10 @@ import lib.Util
   */
 object Main {
   def main(args: Array[String]): Unit = {
-    val dialog = new Manejo
-    WindowUtil.open(dialog)
+    val dialog = new Login
+    dialog.pack()
+    dialog.setVisible(true)
     System.exit(0)
   }
+
 }

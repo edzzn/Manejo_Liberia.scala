@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="gui.Manejo">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="4" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="50">
+    <margin top="30" left="30" bottom="100" right="30"/>
+    <constraints>
+      <xy x="20" y="20" width="826" height="400"/>
+    </constraints>
+    <properties>
+      <enabled value="false"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <toolbar id="ca1fd">
+        <constraints>
+          <grid row="0" column="0" row-span="4" col-span="5" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="20"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="7d5" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+            <constraints/>
+            <properties>
+              <model>
+                <item value="Prestamos"/>
+              </model>
+            </properties>
+          </component>
+          <component id="b9a3a" class="javax.swing.JComboBox" binding="comboBox2" default-binding="true">
+            <constraints/>
+            <properties>
+              <model>
+                <item value="Reservas"/>
+                <item value="Crear"/>
+                <item value="Modificar"/>
+                <item value="Eliminar"/>
+                <item value="Buscar"/>
+              </model>
+            </properties>
+          </component>
+          <component id="73804" class="javax.swing.JSeparator">
+            <constraints/>
+            <properties/>
+          </component>
+          <component id="420b1" class="javax.swing.JSeparator">
+            <constraints/>
+            <properties/>
+          </component>
+          <component id="fbef7" class="javax.swing.JComboBox" binding="comboBox5" default-binding="true">
+            <constraints/>
+            <properties>
+              <model>
+                <item value="Estudiantes"/>
+                <item value="Crear"/>
+                <item value="Modificar"/>
+                <item value="Eliminar"/>
+                <item value="Buscar"/>
+              </model>
+            </properties>
+          </component>
+          <component id="db4a7" class="javax.swing.JComboBox" binding="comboBox3" default-binding="true">
+            <constraints/>
+            <properties>
+              <model>
+                <item value="Libros"/>
+                <item value="Crear"/>
+                <item value="Modificar"/>
+                <item value="Eliminar"/>
+                <item value="Buscar"/>
+              </model>
+            </properties>
+          </component>
+          <component id="afe67" class="javax.swing.JComboBox" binding="comboBox4" default-binding="true">
+            <constraints/>
+            <properties>
+              <model>
+                <item value="Categorias"/>
+                <item value="Crear"/>
+                <item value="Modificar"/>
+                <item value="Eliminar"/>
+                <item value="Buscar"/>
+              </model>
+            </properties>
+          </component>
+        </children>
+      </toolbar>
+      <component id="9f3fb" class="javax.swing.JToolBar$Separator">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+    </children>
+  </grid>
+</form>

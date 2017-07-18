@@ -8,15 +8,11 @@ object WindowUtil {
 
   def mjsAlerta(mensaje : String): Unit ={
     val dialog = new MensajeAlerta(mensaje)
-    open(dialog)
+    dialog.pack()
+    dialog.setVisible(true)
   }
 
-  import javax.swing._
-
-
-  def open(obj : JDialog): Unit ={
-    obj.pack()
-    obj.setLocationRelativeTo(null)
-    obj.setVisible(true)
+  def open(obj : Any): Unit ={
+//    val window = new
   }
 }
