@@ -6,8 +6,8 @@ import lib.{RegistroReserva, Util}
   */
 object Main {
   def main(args: Array[String]): Unit = {
-    val reg_res = new RegistroReserva(Util.loadD("r"))
-    println(reg_res)
+    val reg_reserva = new RegistroReserva(Util.loadD("r"))
+    println(reg_reserva)
 
     val dialog = new Manejo
     WindowUtil.open(dialog)

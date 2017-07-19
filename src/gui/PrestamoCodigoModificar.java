@@ -1,19 +1,17 @@
 package gui;
 
+import lib.*;
+
 import javax.swing.*;
 import java.awt.event.*;
 
-public class Prestamo extends JDialog {
+public class PrestamoCodigoModificar extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
+    private JTextField txtCodigo;
 
-    public Prestamo() {
+    public PrestamoCodigoModificar() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -48,7 +46,20 @@ public class Prestamo extends JDialog {
 
     private void onOK() {
         // add your code here
-        dispose();
+        RegistroPrestamo reg_pre = new RegistroPrestamo(Util.loadD("p"));
+        String codigo = txtCodigo.getText();
+        Prestamo prestamo = reg_pre.getPrestamo(codigo);
+        System.out.println(reg_pre);
+        if (prestamo != null){
+            JDialog prestamoModificar = new PrestamoModificar(codigo);
+
+            WindowUtil.open(prestamoModificar);
+            dispose();
+
+
+        } else{
+            WindowUtil.mjsAlerta("prestamo no registrado");
+        }
     }
 
     private void onCancel() {
@@ -57,7 +68,7 @@ public class Prestamo extends JDialog {
     }
 
     public static void main(String[] args) {
-        Prestamo dialog = new Prestamo();
+        PrestamoCodigoModificar dialog = new PrestamoCodigoModificar();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

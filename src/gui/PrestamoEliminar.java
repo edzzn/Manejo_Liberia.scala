@@ -1,17 +1,19 @@
 package gui;
 
-import lib.*;
+import lib.RegistroPrestamo;
+import lib.Util;
+import lib.Prestamo;
 
 import javax.swing.*;
 import java.awt.event.*;
 
-public class ReservaCodigoModificar extends JDialog {
+public class PrestamoEliminar extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
     private JTextField txtCodigo;
 
-    public ReservaCodigoModificar() {
+    public PrestamoEliminar() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -46,20 +48,17 @@ public class ReservaCodigoModificar extends JDialog {
 
     private void onOK() {
         // add your code here
-        RegistroReserva reg_res = new RegistroReserva(Util.loadD("r"));
+        RegistroPrestamo reg_pre = new RegistroPrestamo(Util.loadD("p"));
         String codigo = txtCodigo.getText();
-        Reserva reserva = reg_res.getReserva(codigo);
-        System.out.println(reg_res);
-        System.out.println("Reserva " + reserva);
-        if (reserva != null){
-            JDialog reservaModificar = new ReservaModificar(codigo);
-
-            WindowUtil.open(reservaModificar);
+        Prestamo prestamo = reg_pre.getPrestamo(codigo);
+        System.out.println(reg_pre);
+        if(prestamo != null){
+            reg_pre.deletePrestamo(codigo);
+            Util.saveD("p", reg_pre);
+            WindowUtil.mjsAlerta("Prestamo " + codigo + " <b>Eliminado</b>");
             dispose();
-
-
-        } else{
-            WindowUtil.mjsAlerta("Codigo no registrado");
+        }else{
+            WindowUtil.mjsAlerta("Código no registrado");
         }
     }
 
@@ -69,7 +68,7 @@ public class ReservaCodigoModificar extends JDialog {
     }
 
     public static void main(String[] args) {
-        ReservaCodigoModificar dialog = new ReservaCodigoModificar();
+        PrestamoEliminar dialog = new PrestamoEliminar();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

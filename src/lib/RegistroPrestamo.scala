@@ -16,13 +16,13 @@ class RegistroPrestamo(obj : Any) extends Serializable{
     reg += prestamo
   }
 
-  def editPrestamo(id: String, estudiante : Estudiante, libro : Libro, fechaAPrestamor : String, fechaPrestamo : String, horaPrestamo : String): Unit ={
+  def editPrestamo(id: String, estudiante : Estudiante, libro : Libro, fechaPrestamo : String, horaPrestamo : String): Unit ={
     var prestamo = getPrestamo(id)
-    prestamo.edit(estudiante, libro, fechaAPrestamor, fechaPrestamo, horaPrestamo)
+    prestamo.edit(estudiante, libro,  fechaPrestamo, horaPrestamo)
   }
 
-  def deleteEstudiante(cedula : String): Unit ={
-    val estudiante = getPrestamo(cedula)
+  def deletePrestamo(id : String): Unit ={
+    val estudiante = getPrestamo(id)
     reg -= estudiante
   }
 

@@ -5,7 +5,7 @@ package lib
   */
 class Reserva (val id: String, var estudiante : Estudiante, var libro : Libro, var fechaAReservar : String, var fechaReserva : String, var horaReserva : String) extends Serializable{
 
-  override def toString: String = s"$estudiante.nombre $libro.nombre"
+  override def toString: String = s"${estudiante.nombre} ${estudiante.apellido}  -> ${libro.isbn} ${libro.nombre} : $fechaAReservar"
 
   def edit(estudianteN : Estudiante, libroN : Libro, fechaAReservarN : String, fechaReservaN : String, horaReservaN : String): Unit ={
     estudiante = estudianteN

@@ -3,15 +3,14 @@ package lib
 /**
   * Created by edzzn on 6/29/17.
   */
-class Prestamo(val id: String, var estudiante : Estudiante, var libro : Libro, var fechaAReservar : String, var fechaReserva : String, var horaReserva : String) extends Serializable{
+class Prestamo(val id: String, var estudiante : Estudiante, var libro : Libro, var fechaPrestamo : String, var horaPrestamo : String) extends Serializable{
 
-  override def toString: String = s"$estudiante.nombre $libro.nombre"
+  override def toString: String = s"$id  ${estudiante.nombre} ${estudiante.apellido}  -> ${libro.isbn} ${libro.nombre} : $fechaPrestamo"
 
-  def edit(estudianteN : Estudiante, libroN : Libro, fechaAReservarN : String, fechaReservaN : String, horaReservaN : String): Unit ={
+  def edit(estudianteN : Estudiante, libroN : Libro, fechaPrestamoN : String, horaPrestamoN : String): Unit ={
     estudiante = estudianteN
     libro = libroN
-    fechaAReservar = fechaAReservarN
-    fechaReserva = fechaAReservarN
-    horaReserva = horaReservaN
+    fechaPrestamo = fechaPrestamoN
+    horaPrestamo = horaPrestamoN
   }
 }

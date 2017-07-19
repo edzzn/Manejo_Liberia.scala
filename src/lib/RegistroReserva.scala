@@ -21,9 +21,9 @@ class RegistroReserva(obj : Any) extends Serializable{
     reserva.edit(estudiante, libro, fechaAReservar, fechaReserva, horaReserva)
   }
 
-  def deleteEstudiante(cedula : String): Unit ={
-    val estudiante = getReserva(cedula)
-    reg -= estudiante
+  def deleteReserva(id : String): Unit ={
+    val reserva = getReserva(id)
+    reg -= reserva
   }
 
   def getReserva(id : String): Reserva ={

@@ -1,17 +1,19 @@
 package gui;
 
-import lib.*;
+import lib.RegistroReserva;
+import lib.Reserva;
+import lib.Util;
 
 import javax.swing.*;
 import java.awt.event.*;
 
-public class ReservaCodigoModificar extends JDialog {
+public class ReservaEliminar extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
     private JTextField txtCodigo;
 
-    public ReservaCodigoModificar() {
+    public ReservaEliminar() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -50,16 +52,13 @@ public class ReservaCodigoModificar extends JDialog {
         String codigo = txtCodigo.getText();
         Reserva reserva = reg_res.getReserva(codigo);
         System.out.println(reg_res);
-        System.out.println("Reserva " + reserva);
-        if (reserva != null){
-            JDialog reservaModificar = new ReservaModificar(codigo);
-
-            WindowUtil.open(reservaModificar);
+        if(reserva != null){
+            reg_res.deleteReserva(codigo);
+            Util.saveD("r", reg_res);
+            WindowUtil.mjsAlerta("Reserva " + codigo + " <b>Eliminada</b>");
             dispose();
-
-
-        } else{
-            WindowUtil.mjsAlerta("Codigo no registrado");
+        }else{
+            WindowUtil.mjsAlerta("Código no registrado");
         }
     }
 
@@ -69,7 +68,7 @@ public class ReservaCodigoModificar extends JDialog {
     }
 
     public static void main(String[] args) {
-        ReservaCodigoModificar dialog = new ReservaCodigoModificar();
+        ReservaEliminar dialog = new ReservaEliminar();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

@@ -5,7 +5,7 @@ import lib.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class PrestamoModificar extends JDialog {
+public class PrestamoCrear extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
@@ -14,14 +14,11 @@ public class PrestamoModificar extends JDialog {
     private JTextField txtIsbn;
     private JTextField txtFecha;
     private JTextField txtHora;
-    String codigo;
 
-    public PrestamoModificar(String codigo) {
+    public PrestamoCrear() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
-        this.codigo = codigo;
-        updateDataDisplay();
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -51,19 +48,6 @@ public class PrestamoModificar extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
-    private void updateDataDisplay(){
-        this.txtCodigo.setText(codigo);
-        txtCodigo.setEditable(false);
-
-        RegistroPrestamo reg_pre = new RegistroPrestamo(Util.loadD("p"));
-        Prestamo prestamo = reg_pre.getPrestamo(codigo);
-
-        this.txtFecha.setText(prestamo.fechaPrestamo());
-        this.txtHora.setText(prestamo.horaPrestamo());
-        this.txtId.setText(prestamo.estudiante().cedula());
-        this.txtIsbn.setText(prestamo.libro().isbn());
-    }
-
     private void onOK() {
         // add your code here
         String codigo = txtCodigo.getText();
@@ -77,23 +61,28 @@ public class PrestamoModificar extends JDialog {
             RegistroLibro reg_lib = new RegistroLibro(Util.loadD("l"));
             RegistroPrestamo reg_pre = new RegistroPrestamo(Util.loadD("p"));
 
-            Estudiante estudiante = reg_est.getEstudiante(id);
-            Libro libro = reg_lib.getLibro(isbn);
+            if(reg_est.getEstudiante(id) == null){
+                WindowUtil.mjsAlerta("Estudiante no registrado");
+            }else if(reg_lib.getLibro(isbn) == null){
+                WindowUtil.mjsAlerta("Libro no registrado");
+            }else if(reg_pre.getPrestamo(codigo) != null){
+                WindowUtil.mjsAlerta("Reserva ya registrada");
+            }else {
+                Estudiante estudiante = reg_est.getEstudiante(id);
+                Libro libro = reg_lib.getLibro(isbn);
 
-            if(estudiante==null){
-                WindowUtil.mjsAlerta("Error, estudiante no existe");
+                Prestamo nuevoPrestamo =new Prestamo(codigo,estudiante,libro,fecha,hora);
+                reg_pre.add(nuevoPrestamo);
 
-            }else if (libro == null){
-                WindowUtil.mjsAlerta("Error, libro no existe");
-            }else{
-                reg_pre.getPrestamo(codigo).edit(estudiante, libro, fecha, hora);
                 Util.saveD("p",reg_pre);
-                WindowUtil.mjsAlerta("Prestamo <b>Modificado</b>");
+                WindowUtil.mjsAlerta("Libro <b>Registrado</b>");
                 dispose();
             }
         }else{
-            WindowUtil.mjsAlerta("Datos erroneos");
+            WindowUtil.mjsAlerta("Datos invalidos");
         }
+        dispose();
+
     }
 
     private void onCancel() {
@@ -102,7 +91,7 @@ public class PrestamoModificar extends JDialog {
     }
 
     public static void main(String[] args) {
-        PrestamoModificar dialog = new PrestamoModificar("");
+        PrestamoCrear dialog = new PrestamoCrear();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

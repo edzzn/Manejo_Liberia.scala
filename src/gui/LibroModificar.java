@@ -86,8 +86,6 @@ public class LibroModificar extends JDialog {
             // validad si existe el regi
             RegistroCategoria reg_cat = new RegistroCategoria(Util.loadD("c"));
             RegistroLibro reg_lib = new RegistroLibro(Util.loadD("l"));
-
-
             Categoria categoria = reg_cat.getCategoria(categoriaID);
             if(categoria == null){
                 // Validamos la Categoria existe

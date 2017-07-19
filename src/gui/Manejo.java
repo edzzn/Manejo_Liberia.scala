@@ -20,11 +20,17 @@ public class Manejo extends JDialog {
     private JButton btnReservaEditar;
     private JButton btnPrestamoEliminar;
     private JButton btnReservaEliminar;
+    private JButton btnReservaMostrar;
+    private JButton btnPrestamoMostrar;
+    private JButton btnEstudianteMostrar;
+    private JButton btnLibroMostrar;
+    private JButton btnCategoriaMostrar;
 
     public Manejo() {
         setContentPane(contentPane);
         setModal(true);
         fijarAcciones();
+
 
 
     }
@@ -45,6 +51,10 @@ public class Manejo extends JDialog {
                 onReservaEliminar();
             }
         });
+        btnReservaMostrar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) { onReservaMostrar();
+            }
+        });
         btnPrestamosCrear.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onPrestamoCrear();
@@ -58,6 +68,10 @@ public class Manejo extends JDialog {
         btnPrestamoEliminar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onPrestamosEliminar();
+            }
+        });
+        btnPrestamoMostrar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) { onPrestamoMostrar();
             }
         });
         btnEstudianteCrear.addActionListener(new ActionListener() {
@@ -75,6 +89,10 @@ public class Manejo extends JDialog {
                 onEstudianteElimiar();
             }
         });
+        btnEstudianteMostrar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) { onEstudianteMostrar();
+            }
+        });
         btnLibroCrear.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onLibrosCrear();
@@ -88,6 +106,10 @@ public class Manejo extends JDialog {
         btnLibroEliminar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onLibrosEliminar();
+            }
+        });
+        btnLibroMostrar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) { onLibrosMostrar();
             }
         });
         btnCategoriaCrear.addActionListener(new ActionListener() {
@@ -107,7 +129,12 @@ public class Manejo extends JDialog {
                 onCategoriaEliminar();
             }
         });
+        btnCategoriaMostrar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) { onCategoriaMostrar();
+            }
+        });
     }
+
 
     // creamos nuestras funciones
 
@@ -120,27 +147,50 @@ public class Manejo extends JDialog {
 
     private void onReservaEditar() {
         // add your code here
+        JDialog editarReserva = new ReservaCodigoModificar();
+        WindowUtil.open(editarReserva);
         System.out.println("onReservaEditar");
     }
 
     private void onReservaEliminar() {
         // add your code here
+        JDialog eliminarReserva = new ReservaEliminar();
+        WindowUtil.open(eliminarReserva);
         System.out.println("onReservaEliminar");
+    }
+
+    private void onReservaMostrar(){
+        MostrarRegistros mostReg = new MostrarRegistros("r", "Listado de Reservas");
+        WindowUtil.open(mostReg);
+        System.out.println("onReservaMostrar");
     }
 
     private void onPrestamoCrear() {
         // add your code here
+        JDialog crearPrestamo = new PrestamoCrear();
+        WindowUtil.open(crearPrestamo);
         System.out.println("onPrestamoCrear");
+
     }
 
     private void onPrestamoEditar() {
         // add your code here
+        JDialog editarPrestamo = new PrestamoCodigoModificar();
+        WindowUtil.open(editarPrestamo);
         System.out.println("onPrestamoEditar");
     }
 
     private void onPrestamosEliminar() {
         // add your code here
+        JDialog eliminarPrestamo = new PrestamoEliminar();
+        WindowUtil.open(eliminarPrestamo);
         System.out.println("onPrestamosEliminar");
+    }
+
+    private void onPrestamoMostrar(){
+        MostrarRegistros mostReg = new MostrarRegistros("p", "Listado de Prestamos");
+        WindowUtil.open(mostReg);
+        System.out.println("onPrestamoMostrar");
     }
 
     private void onEstudianteCrear() {
@@ -160,6 +210,12 @@ public class Manejo extends JDialog {
         JDialog getIdEliminar = new EstudianteIdEliminar();
         WindowUtil.open(getIdEliminar);
         System.out.println("on btnEstudianteEliminar");
+    }
+
+    private void onEstudianteMostrar(){
+        MostrarRegistros mostReg = new MostrarRegistros("e", "Listado de Estudiantes");
+        WindowUtil.open(mostReg);
+        System.out.println("onEstudianteMostrar");
     }
 
     private void onLibrosCrear() {
@@ -182,6 +238,12 @@ public class Manejo extends JDialog {
         System.out.println("on onLibrosEliminar");
     }
 
+    private void onLibrosMostrar(){
+        MostrarRegistros mostReg = new MostrarRegistros("l", "Listado de Libros");
+        WindowUtil.open(mostReg);
+        System.out.println("onLibrosMostrar");
+    }
+
     private void onCategoriaCrear() {
         // add your code here
         JDialog crearCategoria = new CategoriaCrear();
@@ -199,6 +261,12 @@ public class Manejo extends JDialog {
         JDialog eliminarCategoria = new CategoriaCodigoModificar();
         WindowUtil.open(eliminarCategoria);
         System.out.println("on onCategoriaEliminar");
+    }
+
+    private void onCategoriaMostrar(){
+        MostrarRegistros mostReg = new MostrarRegistros("c", "Listado de Categoria");
+        WindowUtil.open(mostReg);
+        System.out.println("onCategoriaMostrar");
     }
 
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="gui.Prestamo">
-  <grid id="cbd77" binding="contentPane" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="gui.PrestamoCrear">
+  <grid id="cbd77" binding="contentPane" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="20" bottom="20" right="20"/>
     <constraints>
       <xy x="48" y="54" width="436" height="463"/>
@@ -11,7 +11,7 @@
       <grid id="94766" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
         <border type="none"/>
@@ -49,7 +49,7 @@
           </grid>
         </children>
       </grid>
-      <grid id="e3588" layout-manager="GridLayoutManager" row-count="10" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="e3588" layout-manager="GridLayoutManager" row-count="11" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -57,28 +57,28 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="20b1b" class="javax.swing.JLabel">
+          <component id="83031" class="javax.swing.JLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Código del prestamo   "/>
+              <text value="Código"/>
             </properties>
           </component>
-          <vspacer id="d5ea3">
+          <vspacer id="874ed">
             <constraints>
-              <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
-          <component id="bc71c" class="javax.swing.JLabel">
+          <component id="8bfa4" class="javax.swing.JLabel">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="ID estudiante"/>
+              <text value="ID del estudiante"/>
             </properties>
           </component>
-          <component id="48252" class="javax.swing.JLabel">
+          <component id="a3f67" class="javax.swing.JLabel">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -86,7 +86,7 @@
               <text value="ISBN"/>
             </properties>
           </component>
-          <component id="f8f3b" class="javax.swing.JLabel">
+          <component id="c1903" class="javax.swing.JLabel">
             <constraints>
               <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -94,15 +94,15 @@
               <text value="Fecha de reserva"/>
             </properties>
           </component>
-          <component id="d174a" class="javax.swing.JLabel">
+          <component id="4d51e" class="javax.swing.JLabel">
             <constraints>
               <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Fecha de entrega"/>
+              <text value="Hora de reserva     "/>
             </properties>
           </component>
-          <component id="55b68" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+          <component id="b6c9e" class="javax.swing.JTextField" binding="txtCodigo">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="250" height="-1"/>
@@ -110,7 +110,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="37f9a" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+          <component id="88f48" class="javax.swing.JTextField" binding="txtId">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -118,7 +118,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="9b806" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+          <component id="948dd" class="javax.swing.JTextField" binding="txtIsbn">
             <constraints>
               <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -126,7 +126,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="6207b" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+          <component id="a9344" class="javax.swing.JTextField" binding="txtFecha">
             <constraints>
               <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -134,7 +134,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="24260" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+          <component id="1f731" class="javax.swing.JTextField" binding="txtHora">
             <constraints>
               <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -142,33 +142,39 @@
             </constraints>
             <properties/>
           </component>
-          <component id="599bb" class="javax.swing.JToolBar$Separator">
+          <component id="cfc04" class="javax.swing.JToolBar$Separator">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties/>
           </component>
-          <component id="c22d1" class="javax.swing.JToolBar$Separator">
+          <component id="4b718" class="javax.swing.JToolBar$Separator">
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties/>
           </component>
-          <component id="1fc59" class="javax.swing.JToolBar$Separator">
+          <component id="284c5" class="javax.swing.JToolBar$Separator">
             <constraints>
               <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties/>
           </component>
-          <component id="451b" class="javax.swing.JToolBar$Separator">
+          <component id="38425" class="javax.swing.JToolBar$Separator">
             <constraints>
               <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties/>
           </component>
+          <component id="9392" class="javax.swing.JToolBar$Separator">
+            <constraints>
+              <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+          </component>
         </children>
       </grid>
-      <component id="3efa3" class="javax.swing.JLabel">
+      <component id="a6b42" class="javax.swing.JLabel">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -176,15 +182,9 @@
           <text value="Prestamo de libros"/>
         </properties>
       </component>
-      <component id="957a0" class="javax.swing.JToolBar$Separator">
+      <component id="32f9a" class="javax.swing.JToolBar$Separator">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="dbe76" class="javax.swing.JToolBar$Separator">
-        <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
       </component>
