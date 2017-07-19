@@ -5,7 +5,7 @@ package lib
   */
 class Libro(val isbn : String, var nombre : String,  var autor : String, var categoria : Categoria, var numPag : Int,var editorial:String, var idioma : String) extends Serializable{
 
-  override def toString: String = s"$isbn $nombre $autor $categoria $categoria  $numPag $idioma"
+  override def toString: String = s"$isbn\t$nombre\t$autor\t${categoria.codigo}\t$numPag\t$idioma"
 
   def edit(nombreN : String, autorN : String, categoriaN : Categoria, numPagN : Int, editorialN : String, idiomaN : String): Unit ={
     nombre = nombreN

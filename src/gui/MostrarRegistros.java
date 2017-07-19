@@ -4,7 +4,6 @@ import lib.*;
 
 import javax.swing.*;
 import java.awt.event.*;
-import java.util.Vector;
 
 
 public class MostrarRegistros extends JDialog {
@@ -12,8 +11,6 @@ public class MostrarRegistros extends JDialog {
     private JButton btnCerrar;
     private JLabel lblInfo;
     private JTextPane txtPaneDatos;
-    private JTextArea textArea1;
-    private JList list1;
     private String tipo;
     private String info;
 
@@ -63,19 +60,26 @@ public class MostrarRegistros extends JDialog {
 
     public void updateText() {
         System.out.println("Por tipo: " + tipo);
+        String cabecera = "";
 
         switch (tipo) {
             case "l":
-                this.txtPaneDatos.setText((new RegistroLibro(Util.loadD(tipo))).toString());
+                cabecera = "ISBN\tNombre\tAutor\tCategoría\tNumPag\tIdioma\n";
+                this.txtPaneDatos.setText(cabecera + (new RegistroLibro(Util.loadD(tipo))).toString());
                 break;
             case "p":
-                this.txtPaneDatos.setText((new RegistroPrestamo(Util.loadD(tipo))).toString());
+                cabecera = "Código\tEstudiante\t\tISBN\tLibro\tCategoria\tFechaPrest\n";
+                this.txtPaneDatos.setText(cabecera + (new RegistroPrestamo(Util.loadD(tipo))).toString());
                 break;
             case "r":
-                this.txtPaneDatos.setText((new RegistroReserva(Util.loadD(tipo))).toString());
+                cabecera = "Código\tEstudiante\t\tISBN\tLibro\tCategoria\tFechaReserva\n";
+                this.txtPaneDatos.setText(cabecera + (new RegistroReserva(Util.loadD(tipo))).toString());
                 break;
             case "e":
-                this.txtPaneDatos.setText((new RegistroEstudiante(Util.loadD(tipo))).toString());
+                cabecera = "Cédula\tNombre\tApellido\n";
+                this.txtPaneDatos.setText(cabecera+(new RegistroEstudiante(Util.loadD(tipo))).toString());
+
+                // Implementación con TextArea y JList
 //                textArea1.setText((new RegistroEstudiante(Util.loadD(tipo))).toString());
 //                RegistroEstudiante reg_est = new RegistroEstudiante(Util.loadD(tipo));
 //                Vector<Estudiante> vectEstudiante = new Vector<Estudiante>();
@@ -95,7 +99,8 @@ public class MostrarRegistros extends JDialog {
 
                 break;
             case "c":
-                this.txtPaneDatos.setText((new RegistroCategoria(Util.loadD(tipo))).toString());
+                cabecera = "Código\t Descripción\n";
+                this.txtPaneDatos.setText(cabecera + (new RegistroCategoria(Util.loadD(tipo))).toString());
                 break;
             default:
                 System.out.println("Ninguno");

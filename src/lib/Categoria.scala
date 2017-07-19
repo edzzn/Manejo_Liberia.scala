@@ -8,6 +8,6 @@ class Categoria(val codigo : String, var descripcion : String) extends Serializa
     descripcion = descripcionStr
   }
 
-  override def toString : String = s"$codigo $descripcion"
+  override def toString : String = s"$codigo\t$descripcion"
 
 }
