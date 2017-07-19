@@ -62,7 +62,7 @@ public class LibroModificar extends JDialog {
 
         this.txtLenguaje.setText(libro.idioma());
         this.txtAutor.setText(libro.autor());
-        this.txtCategoria.setText(libro.categoria().descripcion());
+        this.txtCategoria.setText(libro.categoria().codigo());
         this.txtEditorial.setText(libro.editorial());
         this.txtNumPagina.setText(String.valueOf(libro.numPag()));
         this.txtNombre.setText(libro.nombre());

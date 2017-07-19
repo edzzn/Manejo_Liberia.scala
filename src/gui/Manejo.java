@@ -258,7 +258,7 @@ public class Manejo extends JDialog {
     }
 
     private void onCategoriaEliminar() {
-        JDialog eliminarCategoria = new CategoriaCodigoModificar();
+        JDialog eliminarCategoria = new CategoriaCodigoEliminar();
         WindowUtil.open(eliminarCategoria);
         System.out.println("on onCategoriaEliminar");
     }

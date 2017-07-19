@@ -6,10 +6,10 @@ import lib.{RegistroReserva, Util}
   */
 object Main {
   def main(args: Array[String]): Unit = {
-    val reg_reserva = new RegistroReserva(Util.loadD("r"))
-    println(reg_reserva)
+/*    val reg_reserva = new RegistroReserva(Util.loadD("r"))
+    println(reg_reserva)*/
 
-    val dialog = new Manejo
+    val dialog = new Login
     WindowUtil.open(dialog)
     System.exit(0)
 

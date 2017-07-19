@@ -59,7 +59,7 @@ public class MostrarRegistros extends JDialog {
     }
 
     public void updateText() {
-        System.out.println("Por tipo: " + tipo);
+//        System.out.println("Por tipo: " + tipo);
         String cabecera = "";
 
         switch (tipo) {
@@ -68,7 +68,7 @@ public class MostrarRegistros extends JDialog {
                 this.txtPaneDatos.setText(cabecera + (new RegistroLibro(Util.loadD(tipo))).toString());
                 break;
             case "p":
-                cabecera = "Código\tEstudiante\t\tISBN\tLibro\tCategoria\tFechaPrest\n";
+                cabecera = "Código\tEstudiante\t\tISBN\tLibro\tCategoria\tFechaPrest\tHoraPrestada\n";
                 this.txtPaneDatos.setText(cabecera + (new RegistroPrestamo(Util.loadD(tipo))).toString());
                 break;
             case "r":

@@ -78,7 +78,7 @@ public class ReservaCrear extends JDialog {
                 reg_res.add(reserva);
 
                 Util.saveD("r", reg_res);
-                WindowUtil.mjsAlerta("Libro <b>Registrado</b>");
+                WindowUtil.mjsAlerta("Reserva <b>Registrada</b>");
                 dispose ();
 
             }

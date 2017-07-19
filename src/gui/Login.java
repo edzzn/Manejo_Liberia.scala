@@ -57,8 +57,11 @@ public class Login extends JDialog {
         // add your code here
         String usuario = "0001";
         String password = "11235813";
-        if(this.textNombre.toString() == usuario && this.textPass.toString() == password){
+        if(this.textNombre.getText().equalsIgnoreCase(usuario) && this.textPass.getText().equalsIgnoreCase(password)){
             System.out.println("Usuario inicia");
+            JDialog manejo  = new Manejo();
+            WindowUtil.open(manejo);
+            dispose();
         } else{
           WindowUtil.mjsAlerta("Datos Incorrectos");
         }
